@@ -12,10 +12,10 @@
    ],
    "repository": {
       "type": "git",
-      "url": "https://github.com/googleprivate/ml"
+      "url": "https://github.com/IronPan/test"
    },
    "bugs": {
-      "url": "https://github.com/googleprivate/ml/issues"
+      "url": "https://github.com/IronPan/test/issues"
    },
    "keywords": [
       "pipelines"
