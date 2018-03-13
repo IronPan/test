@@ -12,19 +12,19 @@
    ],
    "repository": {
       "type": "git",
-      "url": "https://github.com/googleprivate/ml"
+      "url": "https://github.com/IronPan/test"
    },
    "bugs": {
-      "url": "https://github.com/googleprivate/ml/issues"
+      "url": "https://github.com/IronPan/test/issues"
    },
    "keywords": [
-      "pipelines"
+      "ml-pipeline"
    ],
    "quickStart": {
-      "prototype": "io.ksonnet.pkg.argo",
-      "componentName": "argo",
+      "prototype": "io.ksonnet.pkg.ml-pipeline",
+      "componentName": "ml-pipeline",
       "flags": {
-         "name": "argo",
+         "name": "ml-pipeline",
          "namespace": "default",
       },
       "comment": "Deploy ML pipeline"
