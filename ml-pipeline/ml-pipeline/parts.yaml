@@ -1,0 +1,33 @@
+{
+   "name": "argo",
+   "apiVersion": "0.0.1",
+   "kind": "ksonnet.io/parts",
+   "description": "Prototypes for running ML pipeline.\n",
+   "author": "cloud ml pipeline team <cloudml-pipelines@google.com>",
+   "contributors": [
+      {
+         "name": "Yang Pan",
+         "email": "yangpa@google.com"
+      }
+   ],
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/googleprivate/ml"
+   },
+   "bugs": {
+      "url": "https://github.com/googleprivate/ml/issues"
+   },
+   "keywords": [
+      "pipelines"
+   ],
+   "quickStart": {
+      "prototype": "io.ksonnet.pkg.argo",
+      "componentName": "argo",
+      "flags": {
+         "name": "argo",
+         "namespace": "default",
+      },
+      "comment": "Deploy ML pipeline"
+   },
+   "license": "Apache 2.0"
+}
