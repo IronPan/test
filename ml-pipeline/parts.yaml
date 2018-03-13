@@ -1,5 +1,5 @@
 {
-   "name": "argo",
+   "name": "ml-pipeline",
    "apiVersion": "0.0.1",
    "kind": "ksonnet.io/parts",
    "description": "Prototypes for running ML pipeline.\n",
