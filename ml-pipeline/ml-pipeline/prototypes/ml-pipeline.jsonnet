@@ -6,6 +6,6 @@
 // @optionalParam namespace string default Namespace
 
 local k = import "k.libsonnet";
-local all = import "k8s/ml-pipeline/all.libsonnet";
+local all = import "ml-pipeline/ml-pipeline/all.libsonnet";
 
 std.prune(k.core.v1.list.new(all.parts(params).all))
