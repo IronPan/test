@@ -11,6 +11,7 @@
     	kind: "PersistentVolumeClaim",
     	metadata: {
     		name: "minio-pv-claim",
+        namespace: namespace,
     	},
     	spec: {
     		accessModes: [
@@ -53,6 +54,7 @@
     	kind: "Deployment",
     	metadata: {
     		name: "minio",
+        namespace: namespace,
     	},
     	spec: {
     	  strategy: {

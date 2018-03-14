@@ -102,46 +102,47 @@
     }, //service
 
     deploy: {
-    	apiVersion: "apps/v1beta2",
-    	kind: "Deployment",
-    	metadata: {
-    		"labels": {
-    			"app": "ml-pipeline",
-    		},
-    		name: "ml-pipeline",
-    	},
-    	spec: {
-    		selector: {
-    			matchLabels: {
-    				app: "ml-pipeline",
-    			},
-    		},
-    		template: {
-    			metadata: {
-    				labels: {
-    					app: "ml-pipeline",
-    				},
-    			},
-    			spec: {
-    				containers: [
-    					{
-    						name: "ml-pipeline-api-server",
-    						image: "gcr.io/ml-pipeline/api-server",
+      apiVersion: "apps/v1beta2",
+      kind: "Deployment",
+      metadata: {
+        "labels": {
+          "app": "ml-pipeline",
+        },
+        name: "ml-pipeline",
+        namespace: namespace,
+      },
+      spec: {
+        selector: {
+          matchLabels: {
+            app: "ml-pipeline",
+          },
+        },
+        template: {
+          metadata: {
+            labels: {
+              app: "ml-pipeline",
+            },
+          },
+          spec: {
+            containers: [
+              {
+                name: "ml-pipeline-api-server",
+                image: "gcr.io/ml-pipeline/api-server",
                 ports: [
                     {
                       containerPort: 8888,
                     },
                   ],
-    					},
-    				],
-    				serviceAccountName: "ml-pipeline",
-    			},
-    		},
-    	},
+              },
+            ],
+            serviceAccountName: "ml-pipeline",
+          },
+        },
+      },
     }, // deploy
 
 
-    service: {
+    serviceUi: {
       apiVersion: "v1",
       kind: "Service",
       metadata: {
@@ -167,43 +168,44 @@
       },
     }, //serviceUi
 
-    deploy: {
-    	apiVersion: "apps/v1beta2",
-    	kind: "Deployment",
-    	metadata: {
-    		"labels": {
-    			"app": "ml-pipeline-ui",
-    		},
-    		name: "ml-pipeline-ui",
-    	},
-    	spec: {
-    		selector: {
-    			matchLabels: {
-    				app: "ml-pipeline-ui",
-    			},
-    		},
-    		template: {
-    			metadata: {
-    				labels: {
-    					app: "ml-pipeline-ui",
-    				},
-    			},
-    			spec: {
-    				containers: [
-    					{
-    						name: "ml-pipeline-ui",
-    						image: "gcr.io/ml-pipeline/api-server",
-    						imagePullPolicy: "Always"
+    deployUi: {
+      apiVersion: "apps/v1beta2",
+      kind: "Deployment",
+      metadata: {
+        "labels": {
+          "app": "ml-pipeline-ui",
+        },
+        name: "ml-pipeline-ui",
+        namespace: namespace,
+      },
+      spec: {
+        selector: {
+          matchLabels: {
+            app: "ml-pipeline-ui",
+          },
+        },
+        template: {
+          metadata: {
+            labels: {
+              app: "ml-pipeline-ui",
+            },
+          },
+          spec: {
+            containers: [
+              {
+                name: "ml-pipeline-ui",
+                image: "gcr.io/ml-pipeline/frontend:0.0.1",
+                imagePullPolicy: "Always",
                 ports: [
                     {
                       containerPort: 3000,
                     },
                   ],
-    					},
-    				],
-    			},
-    		},
-    	},
+              },
+            ],
+          },
+        },
+      },
     }, // deployUi
   },  // parts
 }
